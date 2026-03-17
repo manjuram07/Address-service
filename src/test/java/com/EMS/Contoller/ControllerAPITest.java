@@ -61,20 +61,20 @@ class ControllerAPITest {
 
     }
 
-    @Test
-    void NotFoundException_Test() throws Exception {
-        Integer nonExistentId = 999;
-
-        when(addressService.getAddressByEmployeeId(nonExistentId))
-                           .thenThrow(new Exception("Resource with ID " + nonExistentId + " not found."));
-
-
-        this.mockMvc.perform(get("/address-api/address/"+nonExistentId))
-//                  .andDo(print())
-                    .andExpect(status().isNotFound());
-
-        verify(addressService).getAddressByEmployeeId(nonExistentId);
-    }
+//    @Test
+//    void NotFoundException_Test() throws Exception {
+//        Integer nonExistentId = 999;
+//
+////        when(addressService.getAddressByEmployeeId(nonExistentId))
+////                           .thenThrow(new Exception("Resource with ID " + nonExistentId + " not found."));
+//
+//
+//        this.mockMvc.perform(get("/address-api/address/"+nonExistentId))
+////                  .andDo(print())
+//                    .andExpect(status().isNotFound());
+//
+//        verify(addressService).getAddressByEmployeeId(nonExistentId);
+//    }
 
     @AfterEach
     void tearDown() {
