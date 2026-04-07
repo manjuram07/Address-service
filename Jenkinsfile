@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/manjuram07/Address-service.git'
+                git branch: 'main', git 'https://github.com/manjuram07/Address-service.git'
             }
         }
 
